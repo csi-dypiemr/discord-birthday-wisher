@@ -17,11 +17,12 @@ birthday_peeps = check_bday()
 
 def birthday_message(name):
     return f"""
-    @everyone Wish {name} a very Happy Birthday Today
-    Hey {name},
-    {random.choice(wish_list)}
-    """
+    @everyone Wish {name} a very Happy Birthday 🥳
 
+    🎉 Hey {name},
+
+    🎂 {random.choice(wish_list)} 🎁
+    """
 
 # configuring asyncio for windows
 if platform.system()=='Windows':
@@ -33,8 +34,6 @@ async def wisher(msg):
         await webhook.send(msg, username='CSI Birthday Wisher')
 
 async def main():
-    
-    for name in birthday_peeps : 
-        await wisher(birthday_message(name))
+    for name in birthday_peeps : await wisher(birthday_message(name))
 
 asyncio.run(main())
