@@ -21,9 +21,4 @@ def convert(date):
 for name, bday in cells : bday_dict[name.value] = convert(bday.value)
 
 # Checking through the dictionary and creating the list of people whose birthday is present
-def check_bday(dict, date): return {k for k, v in dict.items() if v == date}
-
-# Checking
-today = time.strftime('%m-%d')
-
-print(check_bday(bday_dict, today))
+def check_bday(): return [k for k, v in bday_dict.items() if v == time.strftime('%m-%d')]
