@@ -33,7 +33,7 @@ async def wisher(msg):
         webhook = Webhook.from_url(WEBHOOK_URL, adapter=AsyncWebhookAdapter(session))
         await webhook.send(msg, username='CSI Birthday Wisher')
 
-async def main():
+async def runner():
     for name in birthday_peeps : await wisher(birthday_message(name))
 
-asyncio.run(main())
+# asyncio.run(main())
