@@ -7,5 +7,3 @@ app = Flask(__name__)
 def hello_world():
     asyncio.run(runner())
     return "Running"
-
-
